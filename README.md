@@ -61,9 +61,7 @@ To get started, clone this repository into your project's folder and run the com
 
 First of all, we are going to use the local development tools that Bref gives to us. Basically, it consists in a _Dockerized_ environment to simulate that our code is running inside an AWS Lambda container. If you want to read more about it you can check the [docs](https://bref.sh/docs/local-development.html).
 
-I've prepared a simple Makefile to start and stop the application so you can use the command `make run` to start both services defined in the docker-compose file. At this point, the Lambda should be listening on the port 8000 of your local host.
-
-Now we should be able to register this Lambda on the service bus. In my case, I've used the following message:
+I've prepared a simple Makefile to start and stop the application so you can use the command `make run` to start both services defined in the docker-compose file. At this point, the Lambda should be listening on the port 8000 of your local host and we should be able to register it on the service bus. In my case, I've used the following message:
 
 ```json
 {
