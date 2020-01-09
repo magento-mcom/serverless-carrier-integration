@@ -1,0 +1,12 @@
+{
+    "name": "capdevil/sci",
+    "description": "Testing serverless with Bref",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jaume Capdevila Pérez",
+            "email": "contact@jaumecapdevila.net"
+        }
+    ],
+    "require": {}
+}
