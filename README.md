@@ -85,4 +85,21 @@ If you want to try it, open a pick list and try to confirm packing a line. To de
 
 ### Bref deployment to AWS
 
-TODO
+To deploy our Lambda to AWS we are going to use the [serverless](https://serverless.com/) framework.
+
+We are going to follow these steps:
+
+1. Install the serverless cli globally in our host using npm: `npm install -g serverless`
+2. Create new [AWS access keys](https://serverless.com/framework/docs/providers/aws/guide/credentials/#creating-aws-access-keys) following the guide
+3. Configure serverless cli to use our credentials
+
+```bash
+export AWS_ACCESS_KEY_ID=<your-key-here>
+export AWS_SECRET_ACCESS_KEY=<your-secret-key-here>
+```
+
+4. Run the command `serverless deploy`
+
+The last command will read the information of your **serverless.yml** file and deploy your Lambda to the specified region.
+
+
