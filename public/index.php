@@ -1,4 +1,5 @@
 <?php
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
@@ -14,11 +15,14 @@ $app->options('/api', function (Request $request, Response $response, $args) {
 
 $app->post('/api', function (Request $request, Response $response, $args) {
     $data = [
-        'jsonrpc' => 2.0,
+        'jsonrpc' => '2.0',
         'id' => 1,
         'result' => [
             [
                 'id' => 'PACKAGE',
+                'details' => [],
+                'carrier' => 'UPS',
+                'shipping_label_link' => '',
                 'tracking_number' => '123456',
                 'tracking_link' => 'http://mocking.test/carrier',
                 'tracking_number' => '123456',
