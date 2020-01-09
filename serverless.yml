@@ -2,7 +2,7 @@ service: app
 
 provider:
     name: aws
-    region: us-east-1
+    region: eu-west-1
     runtime: provided
 
 plugins:
@@ -16,4 +16,5 @@ functions:
         layers:
             - ${bref:layer.php-73-fpm}
         events:
-            -   http: 'OPTIONS /'
+            -   http: 'OPTIONS /api'
+            -   http: 'POST /api'
