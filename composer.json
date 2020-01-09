@@ -8,5 +8,9 @@
             "email": "contact@jaumecapdevila.net"
         }
     ],
-    "require": {}
+    "require": {
+        "bref/bref": "^0.5.12",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.0"
+    }
 }
