@@ -16,5 +16,4 @@ functions:
         layers:
             - ${bref:layer.php-73-fpm}
         events:
-            -   http: 'ANY /'
-            -   http: 'ANY /{proxy+}'
+            -   http: 'OPTIONS /'
