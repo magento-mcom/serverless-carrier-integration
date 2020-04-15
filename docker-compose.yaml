@@ -4,7 +4,7 @@ services:
     web:
         image: bref/fpm-dev-gateway
         ports:
-            - '8000:80'
+            - '8001:80'
         volumes:
             - .:/var/task
         depends_on:
@@ -12,6 +12,6 @@ services:
         environment:
             HANDLER: public/index.php
     php:
-        image: bref/php-73-fpm-dev
+        image: bref/php-74-fpm-dev
         volumes:
             - .:/var/task:ro

@@ -1,16 +1,28 @@
 {
-    "name": "capdevil/serverless-carrier-integration",
-    "description": "Testing serverless with Bref",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Jaume Capdevila Pérez",
-            "email": "contact@jaumecapdevila.net"
-        }
-    ],
-    "require": {
-        "bref/bref": "^0.5.12",
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.0"
+  "name": "megento-mcom/serverless-carrier-integration",
+  "license": "proprietary",
+  "description": "Simple Serverless carrier integration with Bref",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Jaume Capdevila Pérez",
+      "email": "capdevil@adobe.com"
     }
+  ],
+  "require": {
+    "bref/bref": "^0.5.12",
+    "slim/slim": "4.*",
+    "slim/psr7": "^1.0",
+    "php-di/slim-bridge": "^3.0",
+    "fzaninotto/faker": "^1.9",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Magento\\CarrierMock\\": [
+        "src/",
+        "apps/api/src/"
+      ]
+    }
+  }
 }
