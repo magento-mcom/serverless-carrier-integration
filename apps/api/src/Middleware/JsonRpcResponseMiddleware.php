@@ -21,6 +21,7 @@ final class JsonRpcResponseMiddleware
 
         $response = new SlimResponse();
         $response = $response->withHeader('Content-Type', 'application/json');
+        $response = $response->withHeader('X-Magento-Service-Bus', '*');
 
         $response->getBody()->write(
             json_encode(
