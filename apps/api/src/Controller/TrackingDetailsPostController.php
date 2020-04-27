@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Magento\CarrierMock\Controller;
 
 use Magento\CarrierMock\Application\TrackingDetailsGenerator;
-use Magento\CarrierMock\Domain\MissingPackagesError;
+use Magento\CarrierMock\Domain\MissingPackagesList;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -22,23 +22,29 @@ final class TrackingDetailsPostController
     {
         $payload = $request->getParsedBody();
 
-        $this->ensurePackagesListIsPresent($payload);
+        $this->ensurePayloadContainsThePackagesList($payload);
 
         $packages = ($this->generator)($payload['params']['shipment']['packages']);
 
-        $response->getBody()->write(json_encode($packages));
+        $content = [
+            'jsonrpc' => '2.0',
+            'id' => 1,
+            'result' => $packages,
+        ];
+
+        $response->getBody()->write(json_encode($content));
 
         return $response;
     }
 
-    private function ensurePackagesListIsPresent(array $payload): void
+    private function ensurePayloadContainsThePackagesList(array $payload): void
     {
         if (
             empty($payload['params']) ||
             empty($payload['params']['shipment']) ||
             empty($payload['params']['shipment']['packages'])
         ) {
-            throw MissingPackagesError::create();
+            throw MissingPackagesList::create();
         }
     }
 }

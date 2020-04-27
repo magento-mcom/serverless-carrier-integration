@@ -1,17 +1,17 @@
 version: "3.5"
 
 services:
-    web:
-        image: bref/fpm-dev-gateway
-        ports:
-            - '8001:80'
-        volumes:
-            - .:/var/task
-        depends_on:
-            - php
-        environment:
-            HANDLER: public/index.php
-    php:
-        image: bref/php-74-fpm-dev
-        volumes:
-            - .:/var/task:ro
+  web:
+    image: bref/fpm-dev-gateway
+    ports:
+      - '8001:80'
+    volumes:
+      - .:/var/task
+    depends_on:
+      - php
+    environment:
+      HANDLER: public/index.php
+  php:
+    image: bref/php-74-fpm-dev
+    volumes:
+      - .:/var/task:ro
