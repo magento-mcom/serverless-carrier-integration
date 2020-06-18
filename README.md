@@ -71,7 +71,7 @@ I've prepared a simple Makefile to start and stop the application so you can use
     "params":
     {
        "id": "carrier_mock",
-       "url": "http://10.0.2.2:8000/api",
+       "url": "http://10.0.2.2:8001/api",
         "subscribes": [
             "magento.logistics.carrier_management.request_shipping_details"
         ]
